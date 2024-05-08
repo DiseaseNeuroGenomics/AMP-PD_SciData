@@ -1,9 +1,18 @@
 # AMP-PD_SciData
 
 This relates to the publication: **A multi-region single nucleus transcriptomic atlas of Parkinson’s disease**
+
 doi: TBA
 
-## pd-metadata-overview.R
+## Creating virtual environment
+
+Using [anaconda](https://conda.io/projects/conda/en/latest/index.html), and the *env.yaml* file provided here the following scripts can be run.
+
+```bash
+conda env create -f env.yml
+```
+
+### pd-metadata-overview.R
 
 This script when run as:
 
@@ -30,9 +39,9 @@ produces the following output files:
 - output_dir/plot_diagnosis.pdf
 
 > This script is designed to run as is when the whole git repo is downloaded.
-> Otherwise please fix *line 12* to reflect your working directory.
+> Otherwise please fix **line 12** to reflect your working directory.
 
-## qtltools_plot_dash_SciData.py
+### qtltools_plot_dash_SciData.py
 
 This script when run as:
 
@@ -44,7 +53,7 @@ produces the following outputs:
 
 - output_dir/SciData_fig4h.pdf
 
-## SciDatafigure_figs3abc.py
+### SciDatafigure_figs3abc.py
 
 This script when run as:
 
