@@ -1,0 +1,101 @@
+"brain_bank","diagnosis_final","sex","race","path_braak_lb","age_at_baseline"
+"Harvard","PD or Parkinsonism","Female","EUR",5,82
+"Harvard","PD or Parkinsonism","Male","EUR",5,77
+"Harvard","PD or Parkinsonism","Female","EUR",5,77
+"Harvard","PD or Parkinsonism","Female","EUR",4,85
+"Harvard","PD or Parkinsonism","Male","EUR",4,88
+"Harvard","PD or Parkinsonism","Male","EUR",3,73
+"Harvard","Control","Male","EUR",0,65
+"Harvard","PD or Parkinsonism","Female","EUR",2,74
+"Harvard","PD or Parkinsonism","Male","EUR",4,57
+"Harvard","PD or Parkinsonism","Male","EUR",5,82
+"Harvard","PD or Parkinsonism","Male","AMR",4,85
+"Harvard","PD or Parkinsonism","Male","EUR",4,78
+"Harvard","PD or Parkinsonism","Male","EUR",3,75
+"Harvard","PD or Parkinsonism","Female","EUR",4,72
+"Harvard","PD or Parkinsonism","Female","EUR",4,87
+"Harvard","PD or Parkinsonism","Male","EUR",4,68
+"Harvard","PD or Parkinsonism","Female","EUR",4,81
+"Harvard","PD or Parkinsonism","Male","EUR",5,75
+"Harvard","PD or Parkinsonism","Male","EUR",3,74
+"Harvard","PD or Parkinsonism","Male","EUR",4,84
+"Harvard","PD or Parkinsonism","Female","EUR",3,67
+"Harvard","PD or Parkinsonism","Male","EUR",4,70
+"Harvard","Control","Male","EUR",0,66
+"Harvard","PD or Parkinsonism","Female","EUR",3,79
+"Harvard","Control","Female","EUR",0,66
+"MSSM","PD or Parkinsonism","Female","EUR",2,81
+"MSSM","Control","Female","AMR",1,67
+"MSSM","Control","Male","EUR",1,72
+"MSSM","PD or Parkinsonism","Male","EUR",4,77
+"MSSM","Control","Male","EUR",1,66
+"MSSM","PD or Parkinsonism","Male","EUR",3,78
+"MSSM","PD or Parkinsonism","Female","EUR",3,97
+"MSSM","PD or Parkinsonism","Male","EUR",3,80
+"MSSM","PD or Parkinsonism","Female","EUR",3,82
+"MSSM","PD or Parkinsonism","Male","EUR",4,84
+"MSSM","PD or Parkinsonism","Male","EUR",5,85
+"MSSM","PD or Parkinsonism","Female","EUR",5,78
+"MSSM","PD or Parkinsonism","Male","EUR",5,81
+"MSSM","PD or Parkinsonism","Female","EUR",5,76
+"MSSM","PD or Parkinsonism","Male","EUR",5,75
+"MSSM","Control","Male","EUR",2,84
+"MSSM","Control","Female","EUR",0,79
+"MSSM","Control","Male","EUR",0,74
+"MSSM","Control","Female","EUR",1,78
+"MSSM","Control","Female","SAS",0,74
+"MSSM","Control","Male","EUR",0,68
+"MSSM","Control","Male","AMR",0,75
+"MSSM","Control","Male","AFR",0,75
+"MSSM","Control","Female","AMR",0,74
+"Udall","PD or Parkinsonism","Male","EUR",2,83
+"Udall","PD or Parkinsonism","Male","EUR",3,91
+"Udall","PD or Parkinsonism","Male","EUR",3,82
+"Udall","PD or Parkinsonism","Male","EUR",4,89
+"Udall","PD or Parkinsonism","Female","EUR",3,73
+"Udall","PD or Parkinsonism","Female","EUR",3,91
+"Udall","PD or Parkinsonism","Female","EUR",3,87
+"Udall","PD or Parkinsonism","Female","EUR",3,75
+"Udall","PD or Parkinsonism","Female","EUR",5,86
+"Udall","PD or Parkinsonism","Male","EUR",5,77
+"Udall","PD or Parkinsonism","Female","EUR",5,88
+"Udall","PD or Parkinsonism","Male","EUR",5,85
+"Udall","PD or Parkinsonism","Female","EUR",5,80
+"Udall","PD or Parkinsonism","Male","EUR",6,78
+"Udall","PD or Parkinsonism","Male","EUR",6,81
+"Udall","PD or Parkinsonism","Male","EUR",5,72
+"Udall","PD or Parkinsonism","Male","EUR",3,81
+"Udall","PD or Parkinsonism","Male","EUR",3,84
+"Udall","PD or Parkinsonism","Male","EUR",5,67
+"Udall","PD or Parkinsonism","Male","EUR",5,82
+"Udall","PD or Parkinsonism","Male","EUR",4,76
+"UMBEB","PD or Parkinsonism","Male","EUR",4,80
+"UMBEB","PD or Parkinsonism","Male","AFR",6,87
+"UMBEB","PD or Parkinsonism","Male","EUR",4,69
+"UMBEB","PD or Parkinsonism","Male","EUR",4,62
+"UMBEB","PD or Parkinsonism","Female","EUR",6,81
+"UMBEB","PD or Parkinsonism","Male","EUR",6,70
+"UMBEB","PD or Parkinsonism","Female","EUR",4,72
+"UMBEB","PD or Parkinsonism","Female","EUR",4,79
+"UMBEB","PD or Parkinsonism","Female","EUR",4,80
+"UMBEB","PD or Parkinsonism","Male","EUR",5,76
+"UMBEB","PD or Parkinsonism","Male","EUR",5,85
+"UMBEB","PD or Parkinsonism","Male","EUR",3,82
+"UMBEB","PD or Parkinsonism","Male","EUR",4,102
+"UMBEB","PD or Parkinsonism","Female","EUR",6,79
+"UMBEB","PD or Parkinsonism","Male","EUR",6,71
+"UMBEB","PD or Parkinsonism","Female","EUR",6,91
+"UMBEB","PD or Parkinsonism","Male","EUR",6,67
+"UMBEB","PD or Parkinsonism","Male","EUR",4,79
+"UMBEB","PD or Parkinsonism","Male","EUR",4,81
+"UMBEB","PD or Parkinsonism","Female","EUR",5,83
+"UMBEB","Control","Female","AMR",0,68
+"UMBEB","Control","Female","EUR",0,95
+"UMBEB","Control","Male","EUR",0,95
+"UMBEB","Control","Female","EUR",0,101
+"UMBEB","Control","Male","EUR",0,72
+"UMBEB","Control","Male","EUR",0,86
+"UMBEB","Control","Male","EUR",0,67
+"UMBEB","Control","Male","EUR",0,76
+"UMBEB","Control","Female","EUR",0,83
+"UMBEB","Control","Male","AMR",0,64
