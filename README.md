@@ -45,7 +45,7 @@ produces the following output files:
 
 
 > This script is designed to run as is when the whole git repo is downloaded.
-> Otherwise please fix **line 12** to reflect your working directory.
+> Otherwise please fix **line 10** to reflect your working directory.
 
 ### qtltools_plot_dash_SciData.py
 
