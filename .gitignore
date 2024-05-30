@@ -1,1 +1,9 @@
+# empty Rplots pdf
 Rplots.pdf
+
+# Remove R history file
+.Rhistory
+
+# Remove jupyter notebook checkpoints
+.ipynb_checkpoints
+
