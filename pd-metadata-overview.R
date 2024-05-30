@@ -4,6 +4,8 @@ library(ggpubr)
 library(dplyr)
 library(ggsci)
 library(UpSetR)
+library(reshape)
+
 
 setwd("./") # FIXME: SET TO THE FOLDER WITH UNCOMPRESSED REPOSITORY
 dry_lab_dir = "dry_lab/"
@@ -128,6 +130,7 @@ fill_color_palette <- function(vals, grp_var, legend_show = TRUE){
 allInfo = read.csv(file.path(wet_lab_dir, "R_plt_allInfo.csv"))
 allInfoDf = read.csv(file.path(wet_lab_dir, "R_plt_allInfoDf.csv"))
 upset_input = read.csv(file.path(dry_lab_dir, "R_UpSetPlot_input_NoPersIdent.csv"))
+upset_input_wgs = read.csv(file.path(dry_lab_dir, "SciData_fig4.csv"))
 notRmDf = read.csv(file.path(dry_lab_dir, "R_plt_notRmdf_NoPersIdent.csv"))
 rboundDf = read.csv(file.path(dry_lab_dir, "R_plt_3rbinddf_NoPersIdent.csv"))
 
@@ -278,6 +281,43 @@ get_upper_tri <- function(cormat) {
   corr = corr + geom_text(aes(variable, ID, label = round(value, 2)), color = "black", size = 3)
   corr
   mpdf("pd_phenotypes_correlation_spearman", width=4, height=4); print(corr); dev.off() 
+}
+
+##############################################################
+### PLOT DATASET CHARACTERISTICS / FIG. 4: QC OF WGS DATA ####
+
+{
+  # Fig. 4a: Distribution of mean coverage indicating the average number of high-quality sequencing reads per base after applying all QC steps.
+  print(paste0("The mean mapped depth was ", round(mean(upset_input_wgs$wgsMetricsMean.Coverage)), " (sd: ", (round(sd(upset_input_wgs$wgsMetricsMean.Coverage),2)), "; ", round(min(upset_input_wgs$wgsMetricsMean.Coverage)), "-", round(max(upset_input_wgs$wgsMetricsMean.Coverage)), ")"))
+  coverageDistrPlot = ggplot(upset_input_wgs, aes(x = wgsMetricsMean.Coverage)) + geom_density(fill = "#E69F00", alpha = 0.5) + labs(x = "Mean Coverage", y = "Density") + theme_classic() + 
+    scale_x_continuous(expand = c(0, 0)) + scale_y_continuous(expand = c(0, 0))
+  mpdf("fig_4a_coverageDistrPlot", width=4, height=3); print(coverageDistrPlot); dev.off()
+  
+  # Fig. 4b: The fraction of the genome sequenced at different depths. The center line (black) indicates the median, the box shows the interquartile range, and the whiskers indicate the highest/lowest values within 1.5× the interquartile range.
+  print(paste0("The paired-end short reads mapped to around ", round(mean(upset_input_wgs$wgsMetricsPCT_1X),3), " (sd:", round(sd(upset_input_wgs$wgsMetricsPCT_1X),3), ") of human reference genome; 30x: ", round(mean(upset_input_wgs$wgsMetricsPCT_10X),3), " (", round(sd(upset_input_wgs$wgsMetricsPCT_10X),3) , ") "))
+  tempDf = upset_input_wgs[grepl(pattern="wgsMetricsPCT_[0-9]", colnames(upset_input_wgs))]
+  tempDf = tempDf[,1:7]
+  colnames(tempDf) = gsub("wgsMetricsPCT_", "", colnames(tempDf))
+  tempDf = reshape::melt(tempDf)
+  coverageBoxPlot = ggplot(tempDf, aes(x=variable, y=value)) + labs(x="Coverage", y="Genome fraction") + 
+    geom_boxplot() + theme_classic() + scale_y_continuous(limits = c(0.25, 1), expand = c(0, 0))
+  coverageBoxPlot
+  mpdf("fig_4b_coverageBoxPlot", width=4, height=3); print(coverageBoxPlot); dev.off()
+  
+  # Fig. 4c-d: Number of per-sample SNPs and indels.
+  paste0("> Total SNPs per donor = ", round(mean(upset_input_wgs$wgsMetricsVariant_TOTAL_SNPS)), " (sd ", round(sd(upset_input_wgs$wgsMetricsVariant_TOTAL_SNPS)), ")") 
+  paste0("> Total indels per donor = ", round(mean(upset_input_wgs$wgsMetricsVariant_TOTAL_INDELS)), " (sd ", round(sd(upset_input_wgs$wgsMetricsVariant_TOTAL_INDELS)), ")") 
+  snpsPlot = ggplot(upset_input_wgs, aes(x = wgsMetricsVariant_TOTAL_SNPS)) + geom_density(fill = "#E69F00", alpha = 0.5) + labs(x = "Per-sample SNPs", y = "Density") + theme_classic() + 
+    scale_x_continuous(expand = c(0, 0)) + scale_y_continuous(expand = c(0, 0))
+  mpdf("fig_4c_snpsPlot", width=4, height=3); print(snpsPlot); dev.off()
+  indelPlot = ggplot(upset_input_wgs, aes(x = wgsMetricsVariant_TOTAL_INDELS)) + geom_density(fill = "#E69F00", alpha = 0.5) + labs(x = "Per-sample indels", y = "Density") + theme_classic() + 
+    scale_x_continuous(expand = c(0, 0)) + scale_y_continuous(expand = c(0, 0))
+  mpdf("fig_4d_indelsPlot", width=4, height=3); print(indelPlot); dev.off()
+  
+  # Fig. 4f The first two PCs of genetic ancestry.
+  genoAncestryMergedPlot = ggplot(upset_input_wgs, aes(x=ancestry_ALL.PC1, y=ancestry_ALL.PC2, color=Demographics.ethnicity)) + theme_bw() + geom_point() + race_color_pal
+  genoAncestryMergedPlot
+  mpdf("geno_ancestry_merged", width=6, height=4); print(genoAncestryMergedPlot); dev.off()
 }
 
 ##############################################################

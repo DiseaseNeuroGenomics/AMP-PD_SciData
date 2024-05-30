@@ -37,6 +37,12 @@ produces the following output files:
 - output_dir/plot_diagnosis_by_brainbank.pdf
 - output_dir/plot_totalCellCount_byBrainRegion.pdf
 - output_dir/plot_diagnosis.pdf
+- output_dir/plot_fig_4a_coverageDistrPlot.pdf
+- output_dir/plot_fig_4b_coverageBoxPlot.pdf
+- output_dir/plot_fig_4c_snpsPlot.pdf
+- output_dir/plot_fig_4d_indelsPlot.pdf
+- output_dir/plot_geno_ancestry_merged.pdf
+
 
 > This script is designed to run as is when the whole git repo is downloaded.
 > Otherwise please fix **line 12** to reflect your working directory.
